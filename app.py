@@ -28,10 +28,17 @@ h1, h2, h3 { color: #38bdf8 !important; font-weight: 700; }
 """, unsafe_allow_html=True)
 
 # ---------------- LOAD RESOURCES ----------------
-model, metrics = load_model_and_metrics()
+try:
+    model, metrics = load_model_and_metrics()
+except Exception as e:
+    st.error(f"Engine Boot Error: {e}")
+    import traceback
+    st.code(traceback.format_exc())
+    st.stop()
 
 if model is None:
-    st.error("Model or metrics not found. Please run `python model_training.py` to generate the required binaries first.")
+    st.warning("🍷 Model artifacts or metrics.json not found.")
+    st.info("Ensure `python model_training.py` has been executed to generate binaries.")
     st.stop()
 
 # ---------------- SIDEBAR: INPUTS ----------------
