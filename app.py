@@ -1,14 +1,19 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from utils import load_model_and_metrics, predict_quality, generate_feature_importance_plot, get_grade_info
-
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Wine Intelligence Pro",
     page_icon="🍷",
     layout="wide"
 )
+
+# ---------------- Fail-Safe Imports ----------------
+try:
+    from utils import load_model_and_metrics, predict_quality, generate_feature_importance_plot, get_grade_info
+except Exception as e:
+    st.error(f"⚠️ Critical Module Failure: {e}")
+    st.stop()
 
 # ---------------- CUSTOM CSS "Midnight Glass" ----------------
 st.markdown("""
