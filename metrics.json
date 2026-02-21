@@ -1,0 +1,20 @@
+{
+    "Mean Squared Error (MSE)": 0.3012,
+    "Root Mean Squared Error (RMSE)": 0.5489,
+    "Mean Absolute Error (MAE)": 0.4224,
+    "R-squared (R2)": 0.539,
+    "Cross-Validation R2 (Mean)": 0.3091,
+    "feature_importance": {
+        "fixed acidity": 0.0532,
+        "volatile acidity": 0.1115,
+        "citric acid": 0.0508,
+        "residual sugar": 0.0579,
+        "chlorides": 0.0711,
+        "free sulfur dioxide": 0.0472,
+        "total sulfur dioxide": 0.0768,
+        "density": 0.0508,
+        "pH": 0.0614,
+        "sulphates": 0.1484,
+        "alcohol": 0.2709
+    }
+}
